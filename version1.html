@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALLAS BGA</title>
+    <!-- Favicon: pequeño icono que aparece en la pestaña del navegador -->
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <!-- Enlace a Bootstrap CSS para agregar estilos y componentes predefinidos, como botones y formularios -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Enlace al archivo CSS personalizado donde se definirán los estilos de la página -->
+    <link rel="stylesheet" href="stilo.css">
+    <!-- Enlace a jQuery, una biblioteca de JavaScript que simplifica la manipulación del DOM y facilita tareas como animaciones -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Enlace al archivo JavaScript personalizado donde se agregarán las funcionalidades interactivas de la página -->
+    <script src="script.js" defer></script> <!-- defer asegura que el script se ejecute una vez que el HTML esté completamente cargado -->
+</head>
+<body>
+    <!-- Barra de navegación que contiene los enlaces principales del sitio -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.ico" alt="Logo" class="nav-logo"> <!-- Imagen del logo que aparece en la barra de navegación -->
+        </div>
+        <!-- Lista de enlaces de navegación con un menú desplegable -->
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Productos</a> <!-- Enlace a la sección de productos con un menú desplegable -->
+                <div class="dropdown-content">
+                    <a href="#producto1">Nuestros Productos</a> <!-- Enlace interno que lleva a la sección de productos -->
+                    <a href="#calculator-form">Cotización de productos</a> <!-- Enlace interno que lleva a la calculadora -->
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#galeria" class="dropbtn">Galería</a> <!-- Enlace a la galería de imágenes -->
+            </li>
+            <li>
+                <a href="#quienes-somos">Quiénes Somos</a> <!-- Enlace a la sección de "Quiénes Somos" -->
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Carrusel de imágenes en la parte superior que muestra varias imágenes de manera rotativa -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-pause="false">
+        <!-- Indicadores del carrusel: pequeños puntos que muestran la imagen actual -->
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <!-- Contenedor de las imágenes del carrusel -->
+        <div class="carousel-inner">
+            <!-- Primera imagen, marcada como "activa" para que sea la primera en mostrarse -->
+            <div class="carousel-item active">
+                <img src="img/1.jpg" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="img/2.jpg" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="img/4.jpg" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+        <!-- Control para mover el carrusel a la imagen anterior -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <!-- Control para mover el carrusel a la imagen siguiente -->
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <!-- Sección "Quiénes Somos" con texto superpuesto sobre una imagen de fondo -->
+    <section class="text-overlay" id="quienes-somos">
+        <div class="overlay-content">
+            <h2>Quiénes Somos</h2>
+            <p>En Mallas BGA, nos dedicamos a la instalación de mallas de protección para balcones, ventanas y áreas comunes, garantizando la seguridad de tus seres queridos sin comprometer la estética de tus espacios. Nuestras soluciones se caracterizan por su calidad superior, resistencia y durabilidad, adaptándose de manera armónica y discreta a cualquier entorno arquitectónico. Nos comprometemos a ofrecer tranquilidad a nuestros clientes mediante instalaciones que cumplen con los más altos estándares de seguridad y diseño.</p>
+        </div>
+    </section>
+
+    <!-- Galería de fotos para mostrar productos o trabajos realizados -->
+    <section class="gallery">
+        <form id="galeria"></form> <!-- El formulario vacío sirve como ancla para el enlace de la barra de navegación -->
+        <div class="row">
+            <!-- Primera fila de imágenes de la galería -->
+            <div class="gallery-item"><img src="img/gallery1.jpg" alt="Galería 1"></div>
+            <div class="gallery-item"><img src="img/gallery2.jpg" alt="Galería 2"></div>
+            <div class="gallery-item"><img src="img/gallery3.jpg" alt="Galería 3"></div>
+        </div>
+        <div class="row">
+            <!-- Segunda fila de imágenes de la galería -->
+            <div class="gallery-item"><img src="img/gallery4.jpg" alt="Galería 4"></div>
+            <div class="gallery-item"><img src="img/gallery5.jpg" alt="Galería 5"></div>
+            <div class="gallery-item"><img src="img/gallery7.jpg" alt="Galería 6"></div>
+        </div>
+    </section>
+
+    <!-- Calculadora de Metros Cuadrados para ayudar a los usuarios a calcular el costo total de sus productos -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Cotización de Productos</h2>
+        <form id="calculator-form" class="minimalist-form">
+            <!-- Selector para elegir el tipo de elemento (ventana o balcón) -->
+            <div class="form-group">
+                <label for="element-type">Tipo de Area:</label>
+                <select class="form-control" id="element-type" required>
+                    <option value="ventana">Ventana</option>
+                    <option value="balcon">Balcón</option>
+                </select>
+            </div>
+    
+            <!-- Botón para agregar más elementos a la calculadora -->
+            <button type="button" id="add-element" class="btn btn-secondary mb-3">Agregar</button>
+    
+            <!-- Aquí se agregarán dinámicamente los elementos -->
+            <div id="elements-group" class="form-group"></div>
+    
+            <!-- Selector para elegir el tipo de malla -->
+            <div class="form-group">
+                <label for="mesh-type">Tipo de Malla:</label>
+                <select class="form-control" id="mesh-type" required>
+                    <option value="nylon">Malla Nylon Transparente</option>
+                    <option value="polyethylene">Malla Polietileno Gris</option>
+                </select>
+            </div>
+    
+            <!-- Campo para ingresar la dirección -->
+            <div class="form-group">
+                <label for="address">Dirección:</label>
+                <input type="text" class="form-control" id="address" placeholder="Ingrese la dirección" required>
+            </div>
+    
+            <!-- Botón para calcular y enviar los datos a WhatsApp -->
+            <button type="submit" class="btn btn-primary btn-block">Enviar Detalles De Cotización</button>
+        </form>
+    
+        <!-- Resultado del cálculo (inicialmente oculto) -->
+        <div id="result" class="alert alert-info mt-3" style="display: none;"></div>
+    </section>
+
+    <!-- Barra lateral con enlaces a las redes sociales de la empresa -->
+    <div class="social-bar">
+        <a href="https://web.facebook.com/mallaskingcolombia/?_rdc=1&_rdr" target="_blank"><img src="img/facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/mallasbgaciudadbonita/" target="_blank"><img src="img/instagram-icon.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@mallasbga" target="_blank"><img src="img/tiktok-icon.png" alt="TikTok"></a>
+    </div>
+
+    <!-- Sección que muestra los productos de la empresa -->
+    <section class="products">
+        <h2>Nuestros Productos</h2>
+        <div class="product-list">
+            <!-- Cada producto tiene una imagen y una breve descripción -->
+            <div id="producto1" class="product-item">
+                <img src="img/producto1.jpg" alt="Producto 1">
+                <div class="product-description">
+                    <p>MALLA NYLON TRANSPARENTE<br>
+                        Durabilidad: 2-3 años.<br>
+                        Resistencia: 120 kg.
+                    </p>
+                </div>
+            </div>
+            <div id="producto2" class="product-item">
+                <img src="img/producto2.jpg" alt="Producto 2">
+                <div class="product-description">
+                    <p>MALLA POLIETILENO GRIS<br>
+                        Durabilidad: 6-8 años.<br>
+                        Resistencia: 240 kg.
+                    </p>
+                </div>
+            </div>
+            <div id="producto3" class="product-item">
+                <img src="img/producto3.jpg" alt="Producto 3">
+                <div class="product-description">
+                    <p>ANJEO/MOSQUITERO</p>
+                </div>
+            </div>
+            <div id="producto4" class="product-item">
+                <img src="img/producto4.jpg" alt="Producto 4">
+                <div class="product-description">
+                    <p>REJA ALUMINIO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página con información de contacto y enlaces -->
+    <footer class="bg-dark text-white pt-4">
+        <div class="container">
+            <div class="row">
+                <!-- Primera columna: Contacto -->
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p><a href="https://maps.app.goo.gl/NGJ11KUnrKG1Q4zo7" target="_blank" class="text-white">Dirección: Cra 18 #4-23</a></p>
+                    <p><a href="mailto:mallasbga@gmail.com" class="text-white">Correo: mallasbga@gmail.com</a></p>
+                    <p><a href="https://wa.me/3168862154" target="_blank" class="text-white">Tel:+57 (316) 8862154</a></p>
+                </div>
+    
+                <!-- Segunda columna: Enlaces útiles -->
+                <div class="col-md-4">
+                    <h5>Enlaces útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#quienes-somos" class="text-white">Quiénes Somos</a></li>
+                        <li><a href="#productos" class="text-white">Productos</a></li>
+                        <li><a href="#calculator-form" class="text-white">Calculadora</a></li>
+                        <li><a href="#galeria" class="text-white">Galería</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Tercera columna: Redes sociales -->
+                <div class="col-md-4">
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/mallaskingcolombia/?_rdc=1&_rdr" target="_blank"><img src="img/facebook-icon.ico" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/mallasbgaciudadbonita/" target="_blank"><img src="img/instagram-icon.ico" alt="Instagram"></a>
+                        <a href="https://www.tiktok.com/@mallasbga" target="_blank"><img src="img/tiktok-icon.ico" alt="TikTok"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center">&copy; 2024 MALLAS BGA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Enlace a Bootstrap JavaScript para funcionalidades como el carrusel y otros componentes interactivos -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
