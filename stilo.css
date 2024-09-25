@@ -365,29 +365,36 @@ footer {
     font-size: 14px; /* Tamaño de fuente base en móviles */
   }
 
-  /* Ajustes para la Barra de Navegación */
-  .navbar {
-    padding: 10px;
-  }
-
   .nav-logo {
     max-height: 40px; /* Ajustar tamaño del logo en móviles */
   }
 
-  @media (max-width: 600px) {
-    .nav-links {
-      display: flex; /* Mantén el flex para los enlaces en una fila */
-      flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
-      justify-content: space-around; /* Distribuye los enlaces de manera uniforme */
-      text-align: center;
-      margin-top: 20px;
-    }
-  
-    .nav-links li {
-      margin: 0 10px; /* Ajusta el margen entre los elementos */
-    }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px;
+    box-sizing: border-box; /* Asegura que padding y borde no afecten el tamaño */
   }
   
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+  }
+  
+  @media (max-width: 600px) {
+    .nav-links li {
+      margin: 0 0px; /* Reduce el margen entre los botones */
+    }
+  
+    .nav-links {
+      justify-content: space-between; /* Distribuye los botones equitativamente */
+    }
+  }
 
   /* Carrusel */
   .carousel {
