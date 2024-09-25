@@ -374,14 +374,16 @@ footer {
     max-height: 40px; /* Ajustar tamaño del logo en móviles */
   }
 
-  .nav-links {
-    justify-content: flex-end; /* Alinear enlaces a la derecha */
-    font-size: 12px; /* Reducir el tamaño de la fuente en móviles */
-    margin-top: 10px; /* Agregar un margen en la parte superior */
-  }
-
-  .nav-links li {
-    margin: 0 4px; /* Ajustar el margen para reducir el espaciado */
+  @media (max-width: 600px) {
+    .nav-links {
+      display: block; /* Cambia la visualización a bloque para apilar los enlaces */
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .nav-links li {
+      margin: 10px 0; /* Aumenta el espaciado entre los elementos del menú */
+    }
   }
 
   /* Carrusel */
