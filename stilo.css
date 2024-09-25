@@ -376,15 +376,18 @@ footer {
 
   @media (max-width: 600px) {
     .nav-links {
-      display: block; /* Cambia la visualización a bloque para apilar los enlaces */
+      display: flex; /* Mantén el flex para los enlaces en una fila */
+      flex-wrap: wrap; /* Permite que los elementos se ajusten si es necesario */
+      justify-content: space-around; /* Distribuye los enlaces de manera uniforme */
       text-align: center;
       margin-top: 20px;
     }
   
     .nav-links li {
-      margin: 10px 0; /* Aumenta el espaciado entre los elementos del menú */
+      margin: 0 10px; /* Ajusta el margen entre los elementos */
     }
   }
+  
 
   /* Carrusel */
   .carousel {
